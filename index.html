@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>jQuery Hello World</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+$(document).ready(function(){
+ $("#msgid").html("This is Hello World by JQuery");
+ 
+ $("#link").click(function(){
+                $("#include").load("https://github.com/TonyClark/ESL"); 
+            });
+});
+</script>
+
+<div id="include"></div>
+<a id="link" href="#">Click Test Link</a>
+
+
+
+This is Hello World by HTML
+
+<div id="msgid">
+</div>
+
+</body>
+</html>
