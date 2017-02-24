@@ -1,130 +1,54 @@
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1,
-      maximum-scale=1">
-    <link
-      href="https://fonts.googleapis.com/css?family=Architects+Daughter"
-      rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css"
-      href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css"
-      href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css"
-      media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>ESL by TonyClark</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript">
-$(document).ready(function(){
-	
-	$("#contents").load("text.html");
-	
-});
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>mouseover image position</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
 
-$("#esl_view").click(function(e){
-		var addressValue = $(this).attr("href");
-               
-		$('#contents').hide().load( addressValue , function(){
-             $('#contents').show()
-      })
-		return false
- 	   });
-	$("#issue_track").click(function(e){
-                var addressValue = $(this).attr("href");
-                
-		$('#contents').hide().load( addressValue , function(){
-             $('#contents').show()
-      })
-		return false
-            });	
-	$("#xpl_view").click(function(e){
-                var addressValue = $(this).attr("href");
-              
-		$('#contents').hide().load( addressValue , function(){
-             $('#contents').show()
-      })
-		return false
-            });
-	$("#esl_book").click(function(e){
-                var addressValue = $(this).attr("href");
-                $('#contents').hide().load( addressValue , function(){
-             $('#contents').show()
-      })
-		return false
-            });
-	$("#isec17").click(function(e){
-                var addressValue = $(this).attr("href");
-               
-		$('#contents').hide().load( addressValue , function(){
-             $('#contents').show()
-      })
-		return false
-            });
-	$("#dev_credits").click(function(e){
-                var addressValue = $(this).attr("href");
-               
-		$('#contents').hide().load( addressValue , function(){
-             $('#contents').show()
-      })
-		return false
-            });
+<style type="text/css">
+/*<![CDATA[*/
+body
+   {
+    background-color:#aaaaff;
+   }
+#one
+   {
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-150px 0 0 -250px;
+   }
+object
+   {
+    width:500px; 
+    height:300px; 
+    border:solid 1px #000000;
+   }
+ /*//]]>*/
+</style>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+function loadURL(u) { 
+    $.ajax({
+        url: u,
+        cache: false
+    }).done(function(data) {
+        $("#web-panel").html(data);
+    });
+}
 </script>
-  </head>
-  <body>
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <div align="center">
-          <section id="main-content">
-		  
-			<div id="contents">
-			</div>
-          </section>
-        </div>
-        <aside id="sidebar">
-          <h2> <font face="Palatino Linotype">Software</font> </h2>
-          <font face="Palatino Linotype">
-            <a href="#" id="esl_view">View ESL on
-              GitHub</a> <br>
-            <a href="https://github.com/TonyClark/ESL/zipball/master">
-              Download ESL .zip file </a> <br>
-            <a href="https://github.com/TonyClark/ESL/tarball/master">
-              Download ESL .tar.gz file</a><br>
-            <a href="https://github.com/TonyClark/ESL/issues" id="issue_track">Issue tracking</a><br><br>
-            ESL Requires XPL: <br>
-            <a href="https://github.com/TonyClark/XPL" id="xpl_view">View XPL on
-              GitHub</a> <br>
-            <a href="https://github.com/TonyClark/XPL/zipball/master">
-              Download XPL .zip file </a> <br>
-            <a href="https://github.com/TonyClark/XPL/tarball/master">
-              Download XPL .tar.gz file</a><br>
-          </font>
-          <hr>
-          <h2> <font face="Palatino Linotype">Documentation</font> </h2>
-          <font face="Palatino Linotype"><a
-              href="https://www.gitbook.com/book/tonyclark/esl/details" id="esl_book" >ESL
-              Book</a><br>
-            <a href="docs/bib/index.html">Papers</a> </font>
-          <hr>
-          <h2> <font face="Palatino Linotype">News </font></h2>
-          <font face="Palatino Linotype">Paper describing how monitors
-            can be implemented in ESL is to be presented at <a
-              href="http://www.isec2017.in" id="isec17">ISEC 2017</a>. </font><br>
-          <hr>
-          <h2><font face="Palatino Linotype">Credits</font></h2>
-          <p><a
-              href="https://tonyclark.gitbooks.io/esl/content/docs/book/credits.html" id="dev_credits" >ESL
-              development credits</a>.<br>
-          </p>
-          <hr> <a
-            href="http://tonyclark.github.io/ESL/">Home</a>.<br>
-        </aside>
-      </div>
-    </div>
-		
-  </body>
+
+</head>
+<body>
+
+<select name="mydropdown" id="url" onchange="loadURL(this.value);">
+<option value="http://123.com/opt.php?3">opt3</option>
+<option value="http://123.com/opt.php?2">opt2</option>
+<option value="http://123.com/opt.php?1">opt1</option>
+</select>
+
+<div id="web-panel"></div>
+
+</body>
 </html>
