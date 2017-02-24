@@ -21,10 +21,12 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript">
 $(document).ready(function(){
-	 
-				
-           
-	$("#esl_view").click(function(e){
+	
+	$("#contents").load("text.html");
+	
+});
+
+$("#esl_view").click(function(e){
 		var addressValue = $(this).attr("href");
                 $("#contents").load(addressValue);
 		e.preventDefault();
@@ -54,10 +56,6 @@ $(document).ready(function(){
                 $("#contents").load(addressValue); 
 		e.preventDefault();
             });
-	
-	$("#contents").load("text.html");
-	
-});
 </script>
   </head>
   <body>
