@@ -37,12 +37,18 @@ $("#esl_view").click(function(e){
 	$("#issue_track").click(function(e){
                 var addressValue = $(this).attr("href");
                 $("#contents").load(addressValue);
-		e.preventDefault();
+		$('#contents').hide().load( addressValue , function(){
+             $('#contents').show()
+      })
+		return false
             });	
 	$("#xpl_view").click(function(e){
                 var addressValue = $(this).attr("href");
-                $("#contents").load(addressValue);
-		e.preventDefault();
+               $("#contents").load(addressValue);
+		$('#contents').hide().load( addressValue , function(){
+             $('#contents').show()
+      })
+		return false
             });
 	$("#esl_book").click(function(e){
                 var addressValue = $(this).attr("href");
@@ -52,12 +58,18 @@ $("#esl_view").click(function(e){
 	$("#isec17").click(function(e){
                 var addressValue = $(this).attr("href");
                 $("#contents").load(addressValue);
-		e.preventDefault();
+		$('#contents').hide().load( addressValue , function(){
+             $('#contents').show()
+      })
+		return false
             });
 	$("#dev_credits").click(function(e){
                 var addressValue = $(this).attr("href");
-                $("#contents").load(addressValue); 
-		e.preventDefault();
+                $("#contents").load(addressValue);
+		$('#contents').hide().load( addressValue , function(){
+             $('#contents').show()
+      })
+		return false
             });
 </script>
   </head>
