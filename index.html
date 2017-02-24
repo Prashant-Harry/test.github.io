@@ -24,32 +24,35 @@ $(document).ready(function(){
 	 
 				
            
-	$("#esl_view").click(function(){
-				var addressValue = $(this).attr("href");
-               $.get("https://github.com/TonyClark/XPL", function(data) {
-   	 $("#contents").html(data);
- 	 }); 
-				alert(addressValue);
-            });
-	$("#issue_track").click(function(){
+	$("#esl_view").click(function(e){
+		var addressValue = $(this).attr("href");
+                $("#contents").load(addressValue);
+		e.preventDefault();
+ 	   });
+	$("#issue_track").click(function(e){
                 var addressValue = $(this).attr("href");
                 $("#contents").load(addressValue);
+		e.preventDefault();
             });	
-	$("#xpl_view").click(function(){
+	$("#xpl_view").click(function(e){
                 var addressValue = $(this).attr("href");
                 $("#contents").load(addressValue);
+		e.preventDefault();
             });
-	$("#esl_book").click(function(){
+	$("#esl_book").click(function(e){
                 var addressValue = $(this).attr("href");
                 $("#contents").load(addressValue);
+		e.preventDefault();
             });
-	$("#isec17").click(function(){
+	$("#isec17").click(function(e){
                 var addressValue = $(this).attr("href");
                 $("#contents").load(addressValue);
+		e.preventDefault();
             });
-	$("#dev_credits").click(function(){
+	$("#dev_credits").click(function(e){
                 var addressValue = $(this).attr("href");
                 $("#contents").load(addressValue); 
+		e.preventDefault();
             });
 	
 	$("#contents").load("text.html");
