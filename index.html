@@ -21,45 +21,56 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript">
 $(document).ready(function(){
-	
 				
-           
+        var addressValue;   
 	$('#esl_view').click(function(){
-				var addressValue = $(this).attr("href");
+				addressValue = $(this).attr("href");
                 $('#contents').load(addressValue); 
 				alert(addressValue);
 				return false;
             });
 	$('#issue_track').click(function(){
-                var addressValue = $(this).attr("href");
+                addressValue = $(this).attr("href");
                 $('#contents').load(addressValue);
 				alert(addressValue);
 				return false;
             });	
 	$('#xpl_view').click(function(){
-                var addressValue = $(this).attr("href");
+                addressValue = $(this).attr("href");
                 $('#contents').load(addressValue); 
 				alert(addressValue);
 				return false;
             });
 	$('#esl_book').click(function(){
-                var addressValue = $(this).attr("href");
+                addressValue = $(this).attr("href");
                 $('#contents').load(addressValue); 	
 				alert(addressValue);
 				return false;				
             });
 	$('#isec17').click(function(){
-                var addressValue = $(this).attr("href");
+                addressValue = $(this).attr("href");
                 $('#contents').load(addressValue); 
 				alert(addressValue);
 				return false;
             });
 	$('#dev_credits').click(function(){
-                var addressValue = $(this).attr("href");
+                addressValue = $(this).attr("href");
                 $('#contents').load(addressValue); 
 				alert(addressValue);
 				return false;
             });
+	
+	$.ajax({
+
+    url: addressValue+key,
+    data: myData,
+    type: 'GET',
+    crossDomain: true,
+    dataType: 'jsonp',
+    success: function() { alert("Success"); },
+    error: function() { alert('Failed!'); },
+    beforeSend: setHeader
+});
 			
 	
 	
