@@ -27,7 +27,7 @@ $(document).ready(function(){
 		$.ajax({
      	   		 url: proxy + addressValue,
    	  		 complete:function(data){
-	   		 $('#contents').html(data);
+	   		 $('#contents').text(data);
           		
     			}
 		});
