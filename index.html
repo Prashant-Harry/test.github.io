@@ -29,7 +29,7 @@ $(document).ready(function(){
 			 url: proxy + addressValue,
     			dataType: 'html',
    			 data: '',
-   			 type: 'POST',
+   			 type: 'GET',
    			 success: function(data) {
       			  //in firefox debugger i can see complete html response inside data 
       			 $('#contents').html(data); // but here, it does not  
