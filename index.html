@@ -27,7 +27,9 @@ $(document).ready(function(){
 		$.ajax({
      	   		 url: proxy + addressValue,
    	  		 complete:function(data){
-	   		 console.log(data);
+				 var parsed = $.parseHTML(data);
+				 $('#contents').html(parsed);
+	   		 console.log(parsed);
           		
     			}
 		});
