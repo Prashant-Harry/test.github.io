@@ -60,16 +60,15 @@ $(document).ready(function(){
 				return false;
             });
 	
-	$.ajax({
+	var proxy = 'https://cors-anywhere.herokuapp.com/';
 
-    url: addressValue,
-    data: myData,
-    type: 'GET',
-    crossDomain: true,
-    dataType: 'jsonp',
-    success: function() { alert("Success"); },
-    error: function() { alert('Failed!'); },
-    beforeSend: setHeader
+$.ajax({
+    // The proxy url expects as first URL parameter the URL to be bypassed
+    // https://cors-anywhere.herokuapp.com/{my-url-to-bypass}
+    url: proxy + addressValue,
+    complete:function(data){
+        console.log(data);
+    }
 });
 			
 	
