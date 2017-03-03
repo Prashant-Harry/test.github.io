@@ -18,65 +18,25 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <title>ESL by TonyClark</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
 $(document).ready(function(){
 				
         var addressValue; 
 	var proxy = 'https://cors-anywhere.herokuapp.com/';
 	$('#esl_view').click(function(){
-				addressValue = $(this).attr("href");
-                
-				
+		addressValue = "https://github.com/TonyClark/ESL";
 		$.ajax({
-    // The proxy url expects as first URL parameter the URL to be bypassed
-    // https://cors-anywhere.herokuapp.com/{my-url-to-bypass}
-    url: proxy + addressValue,
-    complete:function(data){
+     	   		 url: proxy + addressValue,
+   	  		 complete:function(data){
 	   
-        console.log(data);
-    }
-});
+          		console.log(data);
+    			}
+		});
 		
 		
 				
-            });
-	$('#issue_track').click(function(){
-                addressValue = $(this).attr("href");
-                $('#contents').load(addressValue);
-				alert(addressValue);
-				return false;
-            });	
-	$('#xpl_view').click(function(){
-                addressValue = $(this).attr("href");
-                $('#contents').load(addressValue); 
-				alert(addressValue);
-				return false;
-            });
-	$('#esl_book').click(function(){
-                addressValue = $(this).attr("href");
-                $('#contents').load(addressValue); 	
-				alert(addressValue);
-				return false;				
-            });
-	$('#isec17').click(function(){
-                addressValue = $(this).attr("href");
-                $('#contents').load(addressValue); 
-				alert(addressValue);
-				return false;
-            });
-	$('#dev_credits').click(function(){
-                addressValue = $(this).attr("href");
-                $('#contents').load(addressValue); 
-				alert(addressValue);
-				return false;
-            });
-	
-	
-
-
-			
-	
+         });
 	
 });
 </script>
@@ -94,7 +54,7 @@ $(document).ready(function(){
         <aside id="sidebar">
           <h2> <font face="Palatino Linotype">Software</font> </h2>
           <font face="Palatino Linotype">
-            <a href="https://github.com/TonyClark/ESL" id="esl_view">View ESL on
+            <a href="#" id="esl_view">View ESL on
               GitHub</a> <br>
             <a href="https://github.com/TonyClark/ESL/zipball/master">
               Download ESL .zip file </a> <br>
