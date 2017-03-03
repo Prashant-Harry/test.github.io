@@ -25,9 +25,18 @@ $(document).ready(function(){
 	$('#esl_view').click(function(){
 		addressValue = "https://github.com/TonyClark/ESL";
 		$.ajax({
-     	   		 url: proxy + addressValue,
-   	  		 complete:function(data){
-				$('#contents').html(data);
+			
+			 url: proxy + addressValue,
+    			dataType: 'html',
+   			 data: '',
+   			 type: 'POST',
+   			 success: function(data) {
+      			  //in firefox debugger i can see complete html response inside data 
+      			 $('#contents').html(data); // but here, it does not  
+       			 // append the html inside div displayContent. Instead it makes 
+      			  // the current page blank
+   						
+     	   		
 	   		 console.log(data);
           		
     			}
