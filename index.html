@@ -22,12 +22,24 @@
 	<script type="text/javascript">
 $(document).ready(function(){
 				
-        var addressValue;   
+        var addressValue; 
+	var proxy = 'https://cors-anywhere.herokuapp.com/';
 	$('#esl_view').click(function(){
 				addressValue = $(this).attr("href");
-                $('#contents').load(addressValue); 
-				alert(addressValue);
-				return false;
+                
+				
+		$.ajax({
+    // The proxy url expects as first URL parameter the URL to be bypassed
+    // https://cors-anywhere.herokuapp.com/{my-url-to-bypass}
+    url: proxy + addressValue,
+    complete:function(data){
+	   
+        console.log(data);
+    }
+});
+		
+		
+				
             });
 	$('#issue_track').click(function(){
                 addressValue = $(this).attr("href");
@@ -60,16 +72,9 @@ $(document).ready(function(){
 				return false;
             });
 	
-	var proxy = 'https://cors-anywhere.herokuapp.com/';
+	
 
-$.ajax({
-    // The proxy url expects as first URL parameter the URL to be bypassed
-    // https://cors-anywhere.herokuapp.com/{my-url-to-bypass}
-    url: proxy + addressValue,
-    complete:function(data){
-        console.log(data);
-    }
-});
+
 			
 	
 	
