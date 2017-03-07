@@ -19,34 +19,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-				
-        var addressValue; 
-	var proxy = 'https://cors-anywhere.herokuapp.com/';
-	$('#esl_view').click(function(){
-		addressValue = "https://github.com/TonyClark/ESL";
-		$.ajax({
-			
-			 url: proxy + addressValue,
-    			dataType: 'html',
-   			 data: '',
-   			 type: 'GET',
-   			 success: function(data) {
-      			  //in firefox debugger i can see complete html response inside data 
-      			 $('#contents').html(data); // but here, it does not  
-       			 // append the html inside div displayContent. Instead it makes 
-      			  // the current page blank
-   						
-     	   		
-	   		 console.log(data);
-          		
-    			}
-		});
-		return false;
-		
-				
-         });
-	
-});
+		$('#contents').load("text.html");
+	});
 </script>
   </head>
   <body>
